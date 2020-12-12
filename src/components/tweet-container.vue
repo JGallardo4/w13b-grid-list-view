@@ -1,6 +1,8 @@
 <template>
 	<section id="tweets">
-		<button id="view-toggle-button" @click="toggleView()">Change View</button>
+		<button id="view-toggle-button" @click="toggleView()">
+			{{this.listView ? 'View as grid' : 'View as list'}}
+		</button>
 		<tweets
 			id="tweets-container"
 			:class="this.listView ? 'list-view' : 'grid-view'"
