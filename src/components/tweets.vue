@@ -1,16 +1,10 @@
 <template>
-	<section id="tweets">
-		<button id="view-toggle-button" @click="toggleView()">Change View</button>
-		<section
-			id="tweets-container"
-			:class="this.listView ? 'list-view' : 'grid-view'"
-		>
-			<article class="tweet" v-for="(tweet, index) in tweets" :key="index">
-				<h1 class="tweet__author">Author: {{ tweet.author }}</h1>
-				<h2 class="tweet__date">Published on: {{ tweet.date }}</h2>
-				<p class="tweet__content">{{ tweet.content }}</p>
-			</article>
-		</section>
+	<section>
+		<article class="tweet" v-for="(tweet, index) in tweets" :key="index">
+			<h1 class="tweet__author">Author: {{ tweet.author }}</h1>
+			<h2 class="tweet__date">Published on: {{ tweet.date }}</h2>
+			<p class="tweet__content">{{ tweet.content }}</p>
+		</article>
 	</section>
 </template>
 
@@ -27,7 +21,6 @@ export default {
 
 	data() {
 		return {
-			listView: false,
 			tweets: [
 				{
 					author: "Harry",
@@ -51,42 +44,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#tweets-container {
+.tweet {
 	display: grid;
-	gap: 2rem;
-	padding: 2rem;
-
-	&.list-view {
-		grid-template-columns: 1fr;
-	}
-
-	&.grid-view {
-		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-	}
-
-	.tweet {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-auto-rows: auto 1fr;
-		padding: 1rem;
-		gap: 1rem;
-		background-color: lightgray;
-		border-radius: 10px;
-
-		.tweet__author {
-			grid-column: 1;
-			grid-row: 1;
-		}
-		.tweet__date {
-			grid-column: 2;
-			grid-row: 1;
-		}
-		.tweet__content {
-			grid-column: 1 / 3;
-			grid-row: 2;
-		}
-	}
-
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: auto 1fr;
+	padding: 1rem;
+	gap: 1rem;
+	background-color: lightgray;
+	border-radius: 10px;
 	h1 {
 		font-size: larger;
 	}
@@ -94,5 +59,17 @@ export default {
 	h2 {
 		font-size: large;
 	}
+	.tweet__author {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.tweet__date {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.tweet__content {
+		grid-column: 1 / 3;
+		grid-row: 2;
+	}
 }
-</style>>
+</style>

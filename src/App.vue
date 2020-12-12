@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <tweets></tweets>
+    <tweet-container></tweet-container>
   </div>
 </template>
 
 <script>
-import Tweets from "./components/tweets.vue";
+import TweetContainer from './components/tweet-container.vue';
 
 export default {
   name: "App",
   components: {
-    Tweets,
+    TweetContainer
   },
 };
 </script>
