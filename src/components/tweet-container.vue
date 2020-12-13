@@ -27,6 +27,12 @@ export default {
 		},
 	},
 
+	beforeMount() {
+		if(screen.width <= 690) {
+			this.listView = true;
+		}
+	},
+
 	components: {
 		Tweets,
 	},
@@ -61,6 +67,12 @@ export default {
 		&.grid-view {
 			grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 		}
+	}
+}
+
+@media only screen and (max-width: 690px) {
+	#view-toggle-button {
+		display: none;
 	}
 }
 </style>

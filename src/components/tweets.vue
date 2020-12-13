@@ -41,17 +41,17 @@ export default {
 				{
 					author: "Harry",
 					content: "I want the nimbus 3000",
-					date: "October 10, 2001 ",
+					date: "Oct 10, 2001 ",
 				},
 				{
 					author: "Ron",
 					content: "I hate spiders!",
-					date: "October 20, 2001 ",
+					date: "Oct 20, 2001 ",
 				},
 				{
 					author: "Hermione",
 					content: "You're gonna get us killed, or worse... expelled",
-					date: "October 05, 2001 ",
+					date: "Oct 05, 2001 ",
 				},
 			],
 		};

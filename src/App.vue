@@ -8,7 +8,7 @@
 				</div>
 			</div>
 		</header>
-		
+
 		<tweet-container></tweet-container>
 	</div>
 </template>
@@ -25,4 +25,7 @@ export default {
 </script>
 
 <style>
+#app {
+	min-height: 100vh;
+}
 </style>
