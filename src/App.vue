@@ -1,34 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <tweet-container></tweet-container>
-  </div>
+	<div id="app">
+		<header class="hero is-medium is-primary is-bold">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title">My Vue App</h1>
+					<h2 class="subtitle">Toggling layout using class binding</h2>
+				</div>
+			</div>
+		</header>
+		
+		<tweet-container></tweet-container>
+	</div>
 </template>
 
 <script>
-import TweetContainer from './components/tweet-container.vue';
+import TweetContainer from "./components/tweet-container.vue";
 
 export default {
-  name: "App",
-  components: {
-    TweetContainer
-  },
+	name: "App",
+	components: {
+		TweetContainer,
+	},
 };
 </script>
 
 <style>
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-#app {	
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

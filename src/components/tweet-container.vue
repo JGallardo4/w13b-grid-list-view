@@ -1,8 +1,13 @@
 <template>
 	<section id="tweets">
-		<button id="view-toggle-button" @click="toggleView()">
-			{{this.listView ? 'View as grid' : 'View as list'}}
+		<button
+			id="view-toggle-button"
+			class="button is-link is-outlined"
+			@click="toggleView()"
+		>
+			{{ this.listView ? "View as grid" : "View as list" }}
 		</button>
+
 		<tweets
 			id="tweets-container"
 			:class="this.listView ? 'list-view' : 'grid-view'"
@@ -35,17 +40,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#tweets-container {
+#tweets {
 	display: grid;
-	gap: 2rem;
-	padding: 2rem;
+	grid-auto-columns: auto 1fr;
+	padding: 1rem;
+	gap: 1rem;
 
-	&.list-view {
-		grid-template-columns: 1fr;
+	#view-toggle-button {
+		place-self: center;
 	}
 
-	&.grid-view {
-		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-	}	
+	#tweets-container {
+		display: grid;
+		gap: 1rem;
+
+		&.list-view {
+			grid-template-columns: 1fr;
+		}
+
+		&.grid-view {
+			grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+		}
+	}
 }
 </style>

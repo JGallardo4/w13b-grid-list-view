@@ -1,9 +1,25 @@
 <template>
 	<section>
-		<article class="tweet" v-for="(tweet, index) in tweets" :key="index">
-			<h1 class="tweet__author">Author: {{ tweet.author }}</h1>
-			<h2 class="tweet__date">Published on: {{ tweet.date }}</h2>
-			<p class="tweet__content">{{ tweet.content }}</p>
+		<article class="media tweet" v-for="(tweet, index) in tweets" :key="index">
+			<figure class="media-left">
+				<p class="image is-64x64">
+					<img src="https://bulma.io/images/placeholders/128x128.png" />
+				</p>
+			</figure>
+			<div class="media-content">
+				<div class="content">
+					<p>
+						<strong class="tweet__author">{{ tweet.author }}</strong>
+						<small>@{{ tweet.author.toLowerCase() }}</small>
+
+						<br />
+						{{ tweet.content }}
+					</p>
+				</div>
+			</div>
+			<div class="media-right">
+				<small class="tweet__date">{{ tweet.date }}</small>
+			</div>
 		</article>
 	</section>
 </template>
@@ -45,31 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 .tweet {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-auto-rows: auto 1fr;
-	padding: 1rem;
-	gap: 1rem;
-	background-color: lightgray;
-	border-radius: 10px;
-	h1 {
-		font-size: larger;
-	}
-
-	h2 {
-		font-size: large;
-	}
-	.tweet__author {
-		grid-column: 1;
-		grid-row: 1;
-	}
-	.tweet__date {
-		grid-column: 2;
-		grid-row: 1;
-	}
-	.tweet__content {
-		grid-column: 1 / 3;
-		grid-row: 2;
-	}
+	margin-top: 0 !important;
+	padding-top: 0 !important;
 }
 </style>
